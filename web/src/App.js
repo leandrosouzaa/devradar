@@ -1,22 +1,50 @@
 import React, {useState} from 'react';
 
-  // Componente: Bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação.
-  // Estado: Informações contidas em um componente (lembrar: imutabilidade)
-  // Propriedade: Informações que passam de um componente PAI para um componente FILHO.
+import './global.css'
+import './App.css'
+import './Sidebar.css'
+
 
 function App() {
 
-  const [counter, setCounter] = useState(0)
 
-  function incrementCounter() {
-    setCounter(counter++)
-  }
 
   return (
-    <>
-      <h1>Contador: </h1>
-      <button onClick={incrementCounter}>Incrementar</button>
-    </>
+    <div id='app'>
+      <aside>
+        <strong>Cadastrar</strong>
+        <form>
+
+          <div class= "input-block">
+            <label htmlFor='github_username'> Usuário do GitHub</label>
+            <input name='github_username' id='github_username' required />
+          </div >
+
+          <div class= "input-block">
+            <label htmlFor='techs'>Tecnologias</label>
+            <input name='techs' id='techs' required />
+          </div>
+
+          <div className="input-group">
+            <div class= "input-block">
+              <label htmlFor='latitude'>Latitude</label>
+              <input name='latitude' id='latitude' required />
+            </div>
+
+            <div class= "input-block">
+              <label htmlFor='longitude'>Longitude</label>
+              <input name='longitude' id='longitude' required />
+            </div>
+          </div>
+        
+          <button type='submit'>Salvar</button>
+        </form>
+
+      </aside>
+      <main>
+
+      </main>
+    </div>
   );
 }
 
