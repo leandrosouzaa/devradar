@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import './global.css'
 import './App.css'
 import './Sidebar.css'
+import './Main.css'
 
 
 function App() {
@@ -42,7 +43,19 @@ function App() {
 
       </aside>
       <main>
-
+        <ul>
+          <li className='dev-item'>
+            <header>
+              <img src="https://avatars1.githubusercontent.com/u/51727533?s=460&v=4" alt="Leandro Souza"/>
+              <div className="user-info">
+                <strong>Leandro Souza</strong>
+                <span>ReactJS, React-Native, Node.js</span>
+              </div>
+            </header>
+            <p>A Padawan Programmer</p>
+            <a href="https://github.com/leandrosouzaa" >Acessar perfil no GitHub</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
