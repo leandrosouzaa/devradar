@@ -1,90 +1,34 @@
 #app {
   max-width: 1200px;
   margin: 0 auto;
-  padding:60px 30px;
-
+  padding: 60px 30px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-}
 
-asdide strong {
-  font-size: 20px;
-  text-align: center;
-  display: block;
-  color:#333;
-  width: 100%;
-}
-
-aside form {
-  margin-top:30px;
-}
-
-aside form .input-block + .input-block{
-  margin-top: 20px;
-}
-
-aside form .input-group {
-  margin-top: 20px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr;
-}
-
-aside form .input-group .input-block {
-  margin-top:0;
-}
-
-aside form .input-block label {
-  color: #ACACAC;
-  font-size:14px;
-  display: block;
-}
-
-aside form .input-block input {
-  width: 100%;
-  height: 32px;
-  font-size: 14px;
-  columns: #666666;
-  border: 0;
-  border-bottom:1px solid #eeeeee
-}
-
-aside form button[type=submit] {
-  width: 100%;
-  border: 0px;
-  margin-top: 30px;
-  background: #7d40e7;
-  border-radius: 2px;
-  padding: 15px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #FFF;
-  cursor: pointer;
-  transition: background 0.5s;
-
-}
-
-aside form button[type=submit]:hover {
-  background: #6931ca;
 }
 
 #app main {
-  margin-left:30px;
+  margin-left: 30px;
+
 }
 
-@media(max-width:1000px) {
-  #app {
-    flex-direction: column;
-  }
 
-  #app main {
-    margin-left: 0;
-    margin-top: 30px;
-  }
+@media (max-width: 1000px) {
+    #app {
+      flex-direction: column;
 
-  #app aside {
-    width:100%;
-  }
+    }
+
+    #app main {
+      margin-left: 0;
+      margin-top: 30px;
+
+    }
+    
+    #app aside {
+      width: 100%;
+
+    }
+
 }
-

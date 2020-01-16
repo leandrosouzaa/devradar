@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import api from './services/api'
 
 import './global.css'
 import './App.css'
@@ -31,7 +32,14 @@ function App() {
   
   async function handleAddDev(e) {
     e.preventDefault();
-    
+    const response = await api.post('/devs', {
+      github_username,
+      techs,
+      latitude,
+      longitude,
+    })
+
+    console.log(response)
   }
 
 
@@ -74,7 +82,7 @@ function App() {
               <img src="https://avatars1.githubusercontent.com/u/51727533?s=460&v=4" alt="Leandro Souza"/>
               <div className="user-info">
                 <strong>Leandro Souza</strong>
-                <span>ReactJS, React-Native, Node.js</span>
+                <span>ReactJS, React-Native, Node.js></span>
               </div>
             </header>
             <p>A Padawan Programmer</p>

@@ -20,9 +20,15 @@ module.exports = {
       return res.json({ error: `Usuário ${github_username} já está cadastrado. ` });
     }
 
-    const response = await axios.get(`https://api.github.com/users/${github_username}`);
+    try {
+      var response = await axios.get(`https://api.github.com/users/${github_username}`);
+    } catch (error) {
+      return res.json({ error: 'Usuário inexsistente na base de dados do GitHub' });
+    }
 
-    const { name = login, avatar_url, bio } = response.data;
+
+    // eslint-disable-next-line block-scoped-var
+    const { name = login, avatar_url, bio = 'O usuário não possui descrição.' } = response.data;
 
     const techsArray = parseStringAsArray(techs);
     console.log(techsArray);
@@ -92,7 +98,7 @@ module.exports = {
 
     // Buscando dados do usuário no GitHub com seu username.
     const response = await axios.get(`https://api.github.com/users/${dev.github_username}`);
-    const { name, avatar_url, bio } = response.data;
+    const { name = login, avatar_url, bio } = response.data;
 
     // Pegando a localização que do usuário na resposta
     let { location } = dev;
