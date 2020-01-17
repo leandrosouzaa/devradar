@@ -9,9 +9,10 @@ import api from '../services/api'
 
 function Main({navigation}){
 
-  const [devs, setDevs] = useState([''])
+  const [devs, setDevs] = useState([])
   const [currentRegion, setCurrentRegion] = useState(null);
-
+  const [techs, setTechs] = useState('');
+  
   async function loadDevs() {
     const { latitude, longitude } = currentRegion
     const response = await api.get('/search', {
