@@ -19,7 +19,7 @@ function Main({navigation}){
       params : {
         latitude,
         longitude,
-        techs:'ReactJS'
+        techs
       }
     })
     setDevs(response.data.devs);  
@@ -81,6 +81,8 @@ function Main({navigation}){
         placeholderTextColor='#999'
         autoCapitalize='words'
         autoCorrect={false}
+        value={techs}
+        onChangeText={text => setTechs(text)}
       />
       <TouchableOpacity style ={styles.loadButton} onPress={loadDevs}>
         <MaterialIcons name='my-location' size={20} color="#FFF" />
