@@ -6,7 +6,7 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 
 
 
-function Main(){
+function Main({navigation}){
 
   const [currentRegion, setCurrentRegion] = useState(null);
 
@@ -41,7 +41,7 @@ function Main(){
     <MapView initialRegion={currentRegion} style={styles.map}>
       <Marker coordinate={{latitude:-21.2123221, longitude:-50.4619008}} >
         <Image style={styles.avatar} source={{uri:'https://avatars1.githubusercontent.com/u/51727533?s=460&v=4'}} />
-        <Callout>
+        <Callout onPress={() => navigation.navigate('Profile', {github_username:'leandrosouzaa'})}>
           <View style={styles.callout}>
             <Text style={styles.devName}>Leandro Souza</Text>
             <Text style={styles.devBio}>A Padawan Programmer</Text>
