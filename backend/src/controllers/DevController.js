@@ -32,7 +32,6 @@ module.exports = {
     const { name = login, avatar_url, bio = 'O usuário não possui descrição.' } = response.data;
 
     const techsArray = parseStringAsArray(techs);
-    console.log(techsArray);
     const location = {
       type: 'Point',
       coordinates: [longitude, latitude],

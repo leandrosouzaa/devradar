@@ -5,7 +5,7 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 import { MaterialIcons } from '@expo/vector-icons'
 import { Keyboard } from 'react-native';
 import api from '../services/api'
-import {connect, disconnect } from '../services/socket'
+import {connect, disconnect, subscribeToNewDevs } from '../services/socket'
 
 function Main({navigation}){
 
@@ -14,10 +14,16 @@ function Main({navigation}){
   const [techs, setTechs] = useState('');
   
   function setupWebsocket() {
+    disconnect();
+
     const {latitude, longitude} = currentRegion
     
     connect(latitude, longitude, techs);
   }
+
+  useEffect(() => {
+    subscribeToNewDevs(dev => setDevs([...devs,dev]))
+  }, [devs]);
 
   async function loadDevs() {
     const { latitude, longitude } = currentRegion
